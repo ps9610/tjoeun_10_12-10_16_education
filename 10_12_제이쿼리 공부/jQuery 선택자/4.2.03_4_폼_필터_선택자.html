@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 필터 선택자 | jQuery 선택자</title>
+    <style>
+        
+    </style>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function(){
+           $('input:text').css({'backgroundColor':'red'});
+           $('input:password').css({'backgroundColor':'orange'});
+           $(':button').css({'backgroundColor':'yellow'});
+           $('input:checked+label').css({'backgroundColor':'green'});
+           $('textarea:disabled').css({'backgroundColor':'pink'});
+           $('option:selected').css({'backgroundColor':'blue','color':'white'});
+       });
+    </script>
+</head>
+<body>
+    <div><input type="text"></div>
+    <div><input type="password"></div>
+    <div><button>확인</button></div>
+    <div>
+        <input type="checkbox" id="css" checked="checked">
+        <label for="css">css</label>
+    </div>
+    <div>
+        <select>
+            <option>과목선택</option>
+            <option>javascript</option>
+            <option>jQuery</option>
+        </select>
+        <textarea cols="20" rows="5" disabled="disabled">javascript</textarea>
+    </div>
+</body>
+</html>

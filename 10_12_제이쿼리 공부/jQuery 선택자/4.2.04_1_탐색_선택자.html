@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐색 선택자 | jQuery 선택자</title>
+    <style>
+        *{margin:5px}
+    </style>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script>
+     $(function(){
+         $('#m1').children().css({'backgroundColor':'red','color':'white'});
+         $('#m2').children('span').css({'backgroundColor':'orange'});
+         $('#m3').closest('div').css({'backgroundColor':'yellow'});
+         $('#m4 > span.m').nextUntil('em').css({'backgroundColor':'green'});
+         $('#m5 > span').filter('.m').css({'backgroundColor':'blue'});
+         $('#m6 > div').has('span').css({'backgroundColor':'navy','color':'white'});
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <a href="#">내용1_1</a>
+        <span>내용1_2</span>
+    </div>
+    <div id="m2">
+        <a href="#">내용2_1</a>
+        <span>내용2_2</span>
+    </div>
+    <div id="m3">
+        <div>
+            <span>내용3_1</span>
+        </div>
+    </div>
+    <div id="m4">
+        <span class="m">내용4_1</span>
+        <span>내용4_2</span>
+        <span>내용4_3</span>
+        <em>내용4_4</em>
+    </div>
+    <div id="m5">
+        <span class="m">내용5_1</span>
+        <span>내용5_2</span>
+        <span>내용5_3</span>
+    </div>
+    <div id="m6">
+        <div><span>내용6_1</span></div>
+        <div>내용6_2</div>
+    </div>
+
+</body>
+</html>

@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>객체(Object) 리터럴 방식과 콜백함수, this 객체</h1>
+    <h2>d</h2>
     <script>
         $(function(){
             // 3-1. 객체(Object) 리터럴 방식과 콜백함수, this 객체
@@ -21,7 +22,8 @@
                 edps : 100,
                 avg : function(){
                     var x = (this.kor+this.math+this.eng+this.edps)/4;
-                    return console.log(this.name + '의 ' + '평균점수는 : ' + x);
+                    var info = (`${this.name}님의 평균 점수는 ${x}점 입니다.`)
+                    $("h2").html(info);
                 },
                 tot : function(){
                     var x = (this.kor+this.math+this.eng+this.edps);

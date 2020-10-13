@@ -10,28 +10,20 @@ $("선택자").off({}); // off : poweroff
 $("선택자").one({}); //on : only one
 */
 
+//
+
 (function($){
     
     $(".main-btn").on({
-        click:function(){
-
-        },
- 
         mouseenter:function(){
             $(".main-btn").removeClass("addMainbtn"); 
             $(this).addClass("addMainbtn");
             $(".sub").stop().slideUp(0);
             $(this).next().slideDown(500);
-        },
-        mouseout:function(){
-            
-        },
+        }
         focusin:function(){
             $(".main-btn").removeClass("addMainbtn"); 
             $(this).addClass("addMainbtn");
-        },
-        focusout:function(){
-        
         }
     });
 

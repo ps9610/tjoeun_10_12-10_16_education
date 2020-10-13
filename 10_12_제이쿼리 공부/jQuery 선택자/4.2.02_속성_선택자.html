@@ -6,15 +6,20 @@
     <title>속성 선택자 | jQuery 선택자</title>
     <script src="./js/lib/jquery-1.12.4.min.js"></script>
     <script>
-        $(function(){
-            $('.list1 > p[class="list_1"]').css({'backgroundColor':'red'});
-            $('.list1 > p[class!="list_1"]').css({'backgroundColor':'orange'});
-            $('.list2 > p[class~="list"]').css({'backgroundColor':'yellow'});
-            $('.list2 > p[class*="list"]').css({'border':'2px solid green'});
-            $('.list3 > p[class|="list"]').css({'backgroundColor':'blue','color':'white'});
-            $('.list4 > p[class^="list"]').css({'border':'2px solid navy'})
-            $('.list4 > p[class$="bg"]').css({'backgroundColor':'purple','color':'white'})
-        });
+     $(function(){
+         $('.list1 > p[class]').css({'backgroundColor':'orange'});
+         $('.list1 > p[class="list_1"]').css({'backgroundColor':'red'});
+         $('.list2 > p[class*="list"]').css({'border':'2px solid green'});
+         $('.list2 > p[class~="list"]').css({'backgroundColor':'yellow'});
+         $('.list3 > p[class]').css({'backgroundColor':'blue','color':'white'});
+         $('.list4 > p[class^=list]').css({'border':'2px solid navy'});
+         $('.list4 > p[class$=bg]').css({'backgroundColor':'purple','color':'white'});
+
+
+
+
+    
+     });
     </script>
 </head>
 <body>

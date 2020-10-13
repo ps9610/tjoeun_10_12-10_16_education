@@ -33,12 +33,13 @@
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul {display:inline-block;}
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li {float:left;}
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn {display:block;padding:10px 20px 44px 20px;color:#000;font-size:13px;font-weight:500;}
-#wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn:hover {background:#2c2a29;color:#669900;text-decoration:underline;}
-#wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn:focus {background:#2c2a29;color:#669900;text-decoration:underline;}
+/* #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn:hover {background:#2c2a29;color:#669900;text-decoration:underline;} (jQuery로 해버림)*/
+/* #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn:focus {background:#2c2a29;color:#669900;text-decoration:underline;} (jQuery로 해버림)*/
+#wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .main-btn.addMainbtn {background:#2c2a29;color:#669900;text-decoration:underline;}
 
 /* sub-menu */                                                  /* 👇nav(부모):text-align=right, .sub(자손)가 부모의 성질을 가져왔으니 따로 고쳐줘됨 left로*/                    
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .sub {display:none;position:absolute;top:121px;left:0;width:100%;text-align:left;} /* top,left = 0 :항상 상단 모서리에서 나오니까 */
-#wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li:hover .sub {display:block;}
+/* #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li:hover .sub {display:block;} (jQuery로 해버림)*/
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .sub > ul {width:100%;}
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .sub > ul > li {width:100%;} /* 총 2행(행이라 float 아님) */
 #wrap #header .wrap > ul > li:nth-child(2) > ul > li:nth-child(2) #nav > ul > li .sub > ul > li .sub-wrap {width:1100px;margin:0 auto;padding:30px 0;}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문-for문,while문 | 제어문</title>
+<script src="./js/lib/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+
+    1.반복문_for문
+        1) 형식 : 
+        for(시작값;종료값;증가감값){
+            실행
+        }
+        2) 문제 예시 1]
+            1 ~ 10까지 출력하는 반복문(1씩 증가)
+            출력 : console창 사용
+    <script>
+/*        
+        for(var i = 1; i <= 10; i++){
+            //i는 1이라는 변수 선언, i는 10이하고, 1씩 증가한다
+            console.log( i );
+        }
+*/        
+    </script>
+
+        문제 예시 2]
+            1 ~ 10까지 출력하는 반복문(1씩 증가), 누적합 출력
+            출력 : console창 사용
+    <script>
+/*        
+        var total = 0; //반드시 초기값 0 설정
+        for(var i = 1; i <= 10; i++){
+            total += i; //total = total + i
+        }
+        console.log("1부터 10까지 누적 합 : " + total)
+*/        
+    </script>
+
+        문제 예시 3]
+            1 ~ 10까지 짝수의 누적 합 출력하는 반복문(1씩 증가)
+            출력 : console창 사용
+        <script>
+/*
+        var total = 0; //반드시 초기값 0 설정
+
+        for(var i = 2; i <= 10; i+=2){
+            total += i; //total = total + i
+        }
+        console.log("1부터 10까지 짝수의 합 : " + total)
+*/
+        </script>
+
+        문제 예시 4]
+        1 ~ 10까지 짝수의 누적 합 반복 출력하는 반복문
+        출력 : console창 사용
+
+        <script>
+/*            
+        var total = 0; //반드시 초기값 0 설정
+
+        for(var i = 2; i <= 10; i+=2){
+            total += i; //total = total + i
+        }
+        console.log("증가 값: " + i + " 1부터 10까지 짝수의 합 : " + total);
+*/        
+        </script>
+    
+    문제 예시 5]
+    1 ~ 10까지 짝수의 증가값과 누적 합 반복 출력하는 반복문(단, if문과 %를 활용하세요.)
+    출력 : console창 사용
+
+    <script>
+/*        
+    var total = 0; //반드시 초기값 0 설정
+
+    for(var i = 1; i <= 10; i++){
+        if(i % 2 == 0){
+            total += i;
+            console.log("증가 값: " + i + " 1부터 10까지 나머지(%)를 이용한  짝수의 합 : " + total);
+        }
+    }
+*/    
+    </script>
+
+    문제 예시 5]
+    1 ~ 10까지 홀수(odd)의 증가값과 누적 합 반복 출력하는 반복문(단, if문과 %를 활용하세요.)
+    출력 : console창 사용
+
+    <script>    
+/*      
+    var total = 0; //반드시 초기값 0 설정
+
+    for(var i = 1; i <= 10; i++){
+        if(i % 2 !== 0){ // 부정문
+            total += i;
+            console.log("증가 값: " + i + " 1부터 10까지 나머지(%)를 이용한  짝수의 합 : " + total);
+        }
+    }
+*/    
+    </script>
+
+문제 예시 8]
+구구단 2단을 구현하세요.
+출력 : console창 사용
+2 * 1 = 2
+2 * 2 = 4
+.
+.
+2 * 9 = 18
+
+<script>    
+/*     
+var total = 0; //반드시 초기값 0 설정
+
+for(var i = 1; i <= 9; i++){
+        console.log(2 + "*" + i + "=" + (2*i)); //문자만 겹따옴표 묶어버리기
+    }
+*/ 
+</script>
+
+문제 예시 9]
+구구단 2단~9단까지 구현하세요.
+출력 : console창 사용
+2 * 1 = 2
+2 * 2 = 4
+.
+.
+2 * 9 = 18
+
+3 * 1 = 3
+:
+3 * 9 = 27
+.
+.
+9 * 1 = 9
+:
+9 * 9 = 81
+
+<script>    
+     
+var total = 0; //반드시 초기값 0 설정
+// 바깥쪽 for문 변수 i가 한 번 나오면 안 쪽 for문 변수 j는 9번 반복
+for(var i = 2; i <= 9; i++){ //2 한 번 나올때
+    for(var j = 1; j <= 9; j++){ //1 2 3 4 5 6 7 8 9
+        console.log( i + "*" + j + "=" + (i*j) ); //문자만 겹따옴표 묶어버리기
+    }
+}
+ 
+</script>
+    
+    2.반복문_while문
+    3.반복문_do while문
+
+</body>
+</html>

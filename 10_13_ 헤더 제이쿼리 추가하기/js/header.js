@@ -76,6 +76,7 @@ $(".main-btn").each(function(){
     
 }); //3 :콜백 함수 공간 확보
 $(".main-btn").each(function(index){
+                          // 👆 = eq
 
 }); //4 : 콜백 함수 index(매개변수) 이벤트 입력
 $(".main-btn").each(function(index){

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문, if문 | 제어문</title>
+<script src="./js/lib/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <!-- if 조건문: 조건문을 받아서  조건이 참이면 코드 실행, 그렇지 않으면 코드 실행안함. -->
+    <h1>제어문</h1>
+    - 조건문 : 3항 연산자 조건문, if() 조건문, switch() 조건문 (3가지)
+    - 반복문
+
+    <h2>1) 3항 연산자 조건문</h2>
+    (1) 문법형식
+        - 조건 ? 참 : 거짓; 
+
+    (2) 합격 불합격 판정 조건문 예시]
+    <script>
+/*
+    //  var avg = typeof 정수 👉 직접입력
+    //  var avg = prompt("점수를 입력하세요 : "); 👉 number(내장함수)가 없으면 typeof String
+        var avg = Number(prompt("점수를 입력하세요 : ")); //외부입력대기
+        var result = "";
+*/
+
+//문법형식:  (조건절쓰기) ?        (참 true)       :       (거짓 false)
+/*          avg >= 60 ? result = "합격입니다!" : result = "불합격입니다."; 
+            alert(result)
+*/
+    </script>
+    
+
+    <h2>2) if 조건문</h2>
+    <!--
+    [if 조건문 표현 방식]    
+        - if ~  단순 (1가지) 조건문
+        - if ~ else 단순 (2가지) 조건문  = 3항 연산자(조건 ? 참 : 거짓);
+        - if ~ else if ~ else 다중 (3가지) 조건문
+        - if ~ else if ~ else if ~ else if ~ else 다중 (많은) 조건을 판단하는 조건문 
+    [if 조건문 논리연산 포함 (복잡한 조건 방식)]
+        - 다중 조건문 (3가지 이상) 사용
+        - AND(&&)
+        - OR (||)
+        - NOT (!)
+    -->
+    <h3> if ~ 단순 조건문(1가지) 예시 : 성적처리]</h3>
+    <script>
+/*  문법형식 : 
+        if(조건절쓰기){ //조건==참 이면 
+            
+        }
+*/
+/*
+        var avg = Number(prompt("점수를 입력하세요."));
+        if (avg >= 60){
+            alert("합격");
+        }
+*/
+        //중괄호 없이 실행 가능
+/*
+        if (avg >= 60)
+            alert("합격");
+*/
+    </script>
+
+    <h3> if ~ else 단순 조건문(2가지) 예시 : 성적처리]</h3>
+    <script>
+/*  문법형식 : 
+        if(조건절){ //조건==참 이면 
+            
+        }
+        else{ //그 외 조건
+            
+        }
+*/
+
+/*
+       var avg = Number(prompt("점수를 입력하세요."));
+       if(avg >= 60){
+        alert("합격입니다.")
+       }
+       else{
+        alert("합격입니다.")
+       }
+*/
+       </script>
+
+       <h3> if ~ else if ~ else 다중 조건문(3가지) 예시 : 성적처리]</h3>
+    <script>
+/*  문법형식 : 
+       if(조건절쓰기){ //조건1==참 이면 
+
+       }
+       else if(조건절쓰기){ //그 외 조건2==참이면
+
+       }
+       else { ////그 외 모든조건
+
+       }
+*/
+/*
+    var avg = Number(prompt("점수를 입력하세요."));
+
+       if(avg >= 90){
+        alert("매우 우수입니다.")
+       }
+       else if (avg >= 60){
+        alert("우수입니다.")
+       }
+       else{
+        alert("노력하세요.")
+       }
+*/
+    </script>
+
+    <h3> if ~ else if ~ else if ~ else if ~ else 다중 조건문 (n가지) 예시 : 학점처리
+        (A+(95점 이상), A(90점 이상), B+(85점 이상), B(80점 이상), C+(75점 이상), C(70점 이상) D(65점 이상), E(60점 이상), F(60점 미만))]</h3>
+       
+    <script>
+/*  문법형식 : 
+       if(조건절쓰기){ //조건1==참 이면 
+
+       }
+       else if(조건절쓰기){ //그 외 조건2==참이면
+
+       }
+       else if(조건절쓰기){ //그 외 조건3==참이면
+
+       }
+       else if(조건절쓰기){ //그 외 조건n==참이면
+
+       }
+       else { ////그 외 모든조건
+
+       }
+*/
+/*
+    var avg = Number(prompt("점수를 입력하세요."));
+
+       if(avg >= 95){
+        alert("A+")
+       }
+       else if (avg >= 90 ){
+        alert("A")
+       }
+       else if (avg >= 85){
+        alert("B+")
+       }
+       else if (avg >= 80){
+        alert("B")
+       }
+       else if (avg >= 75){
+        alert("C+")
+       }
+       else if (avg >= 70){
+        alert("C")
+       }
+       else if (avg >= 65){
+        alert("D")
+       }
+       else if (avg >= 60){
+        alert("E")
+       }
+       else{
+        alert("F")
+       }
+*/
+    </script>
+ 
+        <h3>if 다중 조건문 논리연산 포함(NOT(!), AND(&&), OR(||)) (복잡한 조건 방식) </h3>
+        <h3>문제 예시 : 국가검정 정보처리기사 합격 불합격 조건</h3>
+        <u>합격조건 : 5개의 모든 과목이 40점 이상이고,  평균 점수가 60점 이상</u></h4>
+
+    <script>
+/*  문법형식 : 
+    if 
+    - [NOT(!):부정]
+        if(!조건절){ // 조건절이 아니면
+
+        }
+        if(!조건절 && !조건절){ // 조건절이 모두 아니라면
+
+        }
+        if(!조건절 || !조건절){ // 조건절 중 하나라도 아니면
+
+        }
+        
+    - [AND(&&): ~이고 ~이면서 = 그리고]
+        if(조건절쓰기 && 조건절쓰기){ // 2개의 조건을 모두 만족해야됨
+
+        }
+        if(조건절쓰기 && 조건절쓰기 && 조건절쓰기 ... ){ // n개의 조건을 모두 만족해야됨
+
+        }
+        if문 안에 또 if문 있어도 &&처럼 쓸 수 있음
+
+    - [OR(||):~이거나 = 또는]
+        if(조건절쓰기 || 조건절쓰기 ||){ //2개 중 하나만 만족하면
+
+        }
+        if(조건절쓰기 || 조건절쓰기 || 조건절쓰기 ... ){ //n개 중 하나만 만족하면
+        
+        }
+        else { ////그 외 모든조건
+
+        }
+*/
+
+/*              //변수가 많아서 변수 만들고  prompt 쓸거임 
+        var subject1 = Number(prompt("과목1 점수를 입력하세요."));
+        var subject2 = Number(prompt("과목2 점수를 입력하세요."));
+        var subject3 = Number(prompt("과목3 점수를 입력하세요."));
+        var subject4 = Number(prompt("과목4 점수를 입력하세요."));
+        var subject5 = Number(prompt("과목5 점수를 입력하세요."));
+
+        var total = subject1 + subject2 + subject3 + subject4 + subject5;
+        var average = Math.round(total / 5); // 평균: 반올림(round)할것
+        var result = null; // 처음엔 아무것도 없으니까(null = 비어있는 값)
+
+            //                         👇 5개의 모든 과목이 40점 이상                        이고,     👇 평균 점수가 60점 이상
+        if( (subject1>=40 && subject2>=40 && subject3>=40 && subject4>=40 && subject5>=40) && average>=60){
+            result = "합격";
+            alert (result);
+        }
+        else {
+            result = "불합격";
+            alert (result);
+        }
+*/
+
+/*      <부정문 버전>
+      <h4>문제 예시 : 국가검정 정보처리기사 합격 불합격 조건<br>
+      <u>합격조건 : 5개의 과목 중 한 과목이라도 40점 미만이거나 또는 전체 평균이 60점 미만이면 불합격
+*/    
+
+/*            //                 👇 5개의 과목 중 한 과목이라도 40점 미만,                 또는     👇 평균 점수가 60점 이상
+            if( (subject1<40 || subject2<40 || subject3<40 || subject4<40 || subject5<40) || average<60){
+            result = "불합격";
+            alert (result);
+        }
+        else {
+            result = "합격";
+            alert (result);
+        }
+*/
+    </script>
+
+    <h2>3) switch() 조건문</h2>
+<!-- 
+    문법 형식 
+    - switch(조건){
+        case 0:
+            실행0;
+            break;
+        case 1:
+            실행1;
+            break;
+        case 2:
+            실행2;
+            break;
+        case 3:
+            실행3;
+            break;   
+        case 4:
+            실행4;
+            break;
+        default:        👈 사실 안써도 관계없음
+            alert("버튼 번호가 잘못되었습니다.");
+    }
+    
+-->
+
+    <h3>문제 예시 : 메인 버튼의 인덱스 번호에 따라서 URL 바뀜</h3>
+    <!-- 변수 : var url = null;-->
+    <!-- 
+    [ index 번호 ]
+    0이면 url = "https://www.starbucks.co.kr/coffee/index.do";
+    1이면 url = "https://www.starbucks.co.kr/menu/index.do;" 
+    2이면 url = "https://www.starbucks.co.kr/store/index.do";
+    3이면 url = "https://www.starbucks.co.kr/responsibility/index.do";
+    4이면 url = "https://www.starbucks.co.kr/msr/index.do";
+    5이면 url = "https://www.starbucks.co.kr/whats_new/index.do";
+-->
+
+    <h4>버튼 번호를 prompt로 입력받아 사이트 주소로 이동하는 조건문</h4>
+    
+    <script>
+/*      var url = null;
+        var btnNum = Number(prompt("0부터 5까지 원하는 숫자 하나를 입력하세요."));
+        
+            switch(btnNum){
+                case 0:
+                    url = "https://www.starbucks.co.kr/coffee/index.do";
+                    break;
+                case 1:
+                    url = "https://www.starbucks.co.kr/menu/index.do";
+                    break;                
+                case 2:
+                    url = "https://www.starbucks.co.kr/store/index.do";
+                    break;                
+                case 3:
+                    url = "https://www.starbucks.co.kr/responsibility/index.do";
+                    break;                
+                case 4:
+                    url = "https://www.starbucks.co.kr/msr/index.do";
+                    break;                
+                case 5:
+                    url = "https://www.starbucks.co.kr/whats_new/index.do";
+                    break;
+                default:
+                    alert("버튼 번호가 잘못되었습니다.");
+            }
+
+            location.href = url;
+*/
+
+    </script>
+
+    <h4>버튼 번호를 click해서 사이트 주소로 이동하는 조건문</h4>
+    <style>
+        .nav-wrap {text-align:center;padding:50px 0;}
+        .nav-wrap span {display:inline-block;margin:0 20px;}
+        .nav-wrap span a {text-decoration:none;display:block;background:#333;color:#fff;font-size:20px;line-height:50px;padding:0 30px;}
+        .nav-wrap span a:hover {background:#000;font-size:20px;}
+    </style>
+    <div class="nav-wrap">
+        <span><a href="#" class="main-btn">0 버튼</a></span>
+        <span><a href="#" class="main-btn">1 버튼</a></span>
+        <span><a href="#" class="main-btn">2 버튼</a></span>
+        <span><a href="#" class="main-btn">3 버튼</a></span>
+        <span><a href="#" class="main-btn">4 버튼</a></span>
+        <span><a href="#" class="main-btn">5 버튼</a></span>
+        <span><a href="#" class="main-btn">6 버튼</a></span>
+    </div>
+    <script>
+        var url = null;
+        var btnNum = null;
+        $(function(){
+
+            //메인버튼 클릭 이벤트 배열처리 each();
+            $(".main-btn").each(function(index){
+                $(this).on({
+                    click:function(e){
+                        //변수를 전달하는 2가지방법 1)함수 전달인자로 바로 써주기, 전달인자를 변수로 만든 후 함수호출
+                        e.preventDefault(); //새로고침되는 현상을 막음 = javascript:void(0)(=javascript:)
+                        // urlSwitchFn(index); //함수 argument(전달인자)
+                        
+                        btnNum = index; //btnNum에 index번호를 할당(대입,저장)함. 왜 변수로 만들어? index는 이 안에서만 쓸수있어서 변수로 만들어서 다른곳에서도 쓰게
+                        urlSwitchFn(); //함수 argument(전달인자)
+                    }
+                });
+            });                //매개변수
+        }); //제이쿼리에서 밖에 있는 자바스크립트(urlSwithchFn) 호출가능
+      //function urlSwitchFn(btnNum){ //매개변수 있음
+        function urlSwitchFn(){ //매개변수 없음
+            alert(btnNum); //매개변수 값 확인
+            switch(btnNum){ 
+                case 0:
+                    url = "https://www.starbucks.co.kr/coffee/index.do";
+                    break;
+                case 1:
+                    url = "https://www.starbucks.co.kr/menu/index.do";
+                    break;                
+                case 2:
+                    url = "https://www.starbucks.co.kr/store/index.do";
+                    break;                
+                case 3:
+                    url = "https://www.starbucks.co.kr/responsibility/index.do";
+                    break;                
+                case 4:
+                    url = "https://www.starbucks.co.kr/msr/index.do";
+                    break;                
+                case 5:
+                    url = "https://www.starbucks.co.kr/whats_new/index.do";
+                    break;    
+                default:
+                    alert("버튼 번호가 잘못되었습니다.");
+                    return false; // = 이제 더 이상 실행하지마!(버튼 클릭 이벤트 오류 났을때 강제취소)
+                            }
+            location.href = url;
+        }
+    </script>
+
+
+
+
+</body>
+</html>

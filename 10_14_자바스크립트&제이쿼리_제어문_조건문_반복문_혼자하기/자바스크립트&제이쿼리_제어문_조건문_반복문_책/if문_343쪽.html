@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문_if문_if중첩문 | 제어문</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script>
+        var html  = Number(prompt("HTML 점수 : "));
+        var css  = Number(prompt("CSS 점수 : "));
+        var javascript  = Number(prompt("JavaScript 점수: "));
+
+        var average = Math.round((html + css + javascript) / 3);
+
+            if(average >= 60){
+
+                if(html < 40){
+                    var result = ("HTML 점수 미달로 불합격입니다.(합격점수: 60점, 본인점수: " + html + "점)");
+                }
+                else if(css < 40){
+                    var result = ("CSS 점수 미달로 불합격입니다.(합격점수: 60점, 본인점수: " + css + "점)");
+                }
+                else if(javascript < 40){
+                    var result = ("자바스크립트 점수 미달로 불합격입니다.(합격점수: 60점, 본인점수: " + javascript + "점)");
+                }
+                else {
+                    var result = ("평균 점수: " + average + "점으로 합격입니다.")
+                }
+            }
+            else {
+                var result = ("평균 점수: " + average + "점으로 불합격입니다.")
+            }
+
+        $(function(){
+            $("h2").html(result);
+        });
+    </script>
+
+</head>
+<!-- 
+- 시험과목 : html, css, javascript
+- 합격기준 : 100점 만점 기준, 과목당 40점 이상, 전과목 평균 60점 이상이면 합격
+-->
+<body>
+    <h2>시험점수</h2>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    
+    
+</head>
+<body>
+    <h1>Object() 객체와 each() 메서드</h1>
+    <script>
+        $(function(){
+            // 2-1. 객체(Object) 리터럴 선언 방법 - 권장방법
+            var cars = {
+                name : "GENESIS", //속성(key) : 값(value)
+                year : 2020, // 리터럴은 세미콜론아니고 쉼표
+                weight : 3000, //
+                price : 6000 // 마지막은 아무것도 안씀
+            };
+                console.log("객체.이름 : " + cars.name); 
+                console.log("모든 객체.키:값" + cars); 
+
+                //each() 메서드..
+                $.each(cars,function(a,b){ //a=key,b=value
+                    console.log(a,b);
+                });
+        });
+    </script>
+</body>
+</html>
+
+
+

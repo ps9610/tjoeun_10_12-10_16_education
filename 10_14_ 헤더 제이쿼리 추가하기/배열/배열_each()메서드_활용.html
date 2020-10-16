@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    
+    
+</head>
+<body>
+    <h1>Array() 객체와 each() 메서드</h1>
+    <script>
+        $(function(){
+            // 2-1. 배열 생성자 선언 방법
+            var cars = [] 
+            cars[0] = "SAAB";
+            cars[1] = "VOLVO";
+            cars[2] = "BMW";
+            cars[3] = "GENESIS";
+            cars[4] = "BENZ";
+            //  👆     👆
+            // index  value
+
+            //$.each(배열이름,콜백함수());
+            //$.each(cars, function(매개변수=이벤트처리됨= 데이터값으로 변해서 나온다는 소리임){
+            $.each(cars, function(index, value){
+                console.log(index, value);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

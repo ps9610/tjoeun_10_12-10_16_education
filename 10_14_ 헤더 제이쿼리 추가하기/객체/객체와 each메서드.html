@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    
+    
+</head>
+<body>
+    <h1>Object() 객체와 each() 메서드</h1>
+    <script>
+        $(function(){
+            // 1-1. 객체(Object) 생성자 선언 방법 - new 
+            var cars = new Object() ;
+            cars.name = "GENESIS"; //객체(object).속성(key)=값(value)데이터 입력
+            cars.year = "2020"; //데이터 입력
+            cars.weight = "3000"; //데이터 입력
+            cars.price = "6000"; //데이터 입력
+
+            console.log(cars.name);
+            console.log(cars);
+
+            //each() 메서드
+            $.each(cars, function(key, value){
+                console.log(key,value);
+            });
+
+        });
+    </script>
+</body>
+</html>
+
+
+

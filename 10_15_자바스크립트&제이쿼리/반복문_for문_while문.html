@@ -89,9 +89,9 @@
     for(i=1; i<=10; i++){
         if(i % 2 !== 0){ // 부정문
             sum += i;
+            console.log(sum);
         }
     }
-        console.log(sum);
 </script>
 
 
@@ -105,11 +105,11 @@
     var sum = 0;
 
     for(i=1; i<=10; i++){
-        if(i % 2 !== 0){
+        if(i % 2 == 1){ // 긍정문 
             sum += i;
+            console.log(sum);
         }
     }
-        console.log(sum);
 </script>
 
 
@@ -125,9 +125,9 @@
     for(i=1; i<=100; i++){
         if(i % 5 === 0){
             sum += i
+            console.log(sum);
         }
     }
-        console.log(sum);
 </script>
 
 
@@ -173,10 +173,10 @@
                             9 * 9 = 81 -->
 <script>
 
-    
+
     // 바깥쪽 for문 :
     // 변수 i가 한 번 나오면 안 쪽 for문 변수 j는 9번 반복
-    for(j=1; j<=9; j++){ //2 한 번 나올때
+    for(j=1; j<=9; j++){ //2 한 번 나올때👇
         for(i=2; i<=9; i++){ //1 2 3 4 5 6 7 8 9
             document.write(i + "*" + j + "=" +( (i*j)<10? "0"+(i*j) : (i*j)) +"&nbsp"); //문자만 겹따옴표 묶어버리기
             }
@@ -201,13 +201,14 @@
     2x8=16          3x8=24              9x8=      
     2x9=18          3x9=27              9x9=       -->
  <script>
+     //제목줄 : 맨 위에서 한 번만 출력
      for(i=2; i<=9; i++){
         document.write("&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp"+ i + "단" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" );
      }
      document.write ("<br>");
 
-    for(j=1; j<=9; j++){
-        for(i=2; i<=9; i++){
+    for(j=1; j<=9; j++){//1 2 3 ... 9 행(줄) -> 왜냐면 컴퓨터는 무조건 한 줄이 끝나고 다음줄이 시작돼서 그럼
+        for(i=2; i<=9; i++){ //2 3 4 ...9 칸
             document.write ( "&nbsp" + "&nbsp" + "&nbsp" + i + "x" + j + "=" + ((i*j)<10? "0"+(i*j) : (i*j)) + "&nbsp" + "&nbsp" + "&nbsp" );
             //document.write ("<br>");
             }
@@ -272,7 +273,7 @@
 <script>
     var cnt = 0;
     
-    for(i=0; i<5; i++){
+    for(i=0; i<5; i++){ //인덱스번호는 0~4
         for(j=0; j<5; j++){
             cnt++;
             $(".table2 tr").eq(i).children("td").eq(j).text(cnt);
@@ -400,8 +401,8 @@ for(i=0; i<5; i++){
 <script>
     var cnt = 0;
 
-for(i=0; i<5; i++){
-    for(j=0; j<=4-i; j++){
+for(i=0; i<5; i++){         //행렬 디버깅하는 방법 : 0     1       2       3  
+    for(j=0; j<=4-i; j++){  //행렬 디버깅하는 방법 : 0-4   0-3     0-2     0-1
         cnt++;
         $(".table5 tr").eq(i).children("td").eq(j).text(cnt);
     }

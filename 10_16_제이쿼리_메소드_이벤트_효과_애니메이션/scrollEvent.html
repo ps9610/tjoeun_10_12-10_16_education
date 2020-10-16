@@ -15,7 +15,8 @@
     img {vertical-align:middle;}
     a {color:#fff;text-decoration:none;}
     
-    .button-wrap {text-align:center;position:fixed;top:0;left:0;width:100%;height:50px;z-index:2;background:rgba(0,0,0,0.2);}
+    .button-wrap {text-align:center;position:fixed;top:0;left:0;width:100%;height:50px;z-index:2;background:rgba(0,0,0,0.2);transition:all .6s;}
+    .button-wrap.addHeader {background:rgba(0,0,0,1);}
     .button-wrap a {display:inline-block;font-size:20px;line-height:50px;padding:0 20px;margin:0 5px;background:rgba(0,0,0,0);}
     .button-wrap a:hover {display:inline-block;font-size:20px;line-height:50px;padding:0 20px;margin:0 5px;background:rgba(0,0,0,0.6);}
 
@@ -30,7 +31,7 @@
 
 <body>
 
-    <div class="button-wrap">
+    <div class="button-wrap ">
       <a href="#section1" class="main-btn">Section1</a>
       <a href="#section2" class="main-btn">Section2</a>
       <a href="#section3" class="main-btn">Section3</a>
@@ -67,7 +68,7 @@
         console.log(sec5Top);
         console.log(sec6Top);*/
 
-    //smooth scrolling
+        //smooth scrolling (버튼 클릭 이벤트)
         $(".main-btn").on({
             click: function(){
                 var a = $(this).attr("href");
@@ -77,6 +78,45 @@
                 // 부드럽게 이동하는 코딩 = smooth scrolling
                 $("html, body").stop().animate({scrollTop:$(a).offset().top}, 1000, "easeOutBack");
             }
+        });
+
+        //스크롤 이벤트(BOM 기능
+        //👇 콜백함수 만드는 방법
+        // $(window).scroll()
+        // $(window).scroll(function(){})
+        // $(window).scroll(function(){
+
+        // });
+        $("section").stop().animate({ opacity:0.3 }, 0); //초기값
+        
+        $(window).scroll(function(){
+            console.log( $(this).scrollTop() );
+            //스크롤 탑 값이 0=맨위상단, 초기화
+            if( $(this).scrollTop() == 0 ){  //섹션 1의 탑값 위치에 오면
+                $("section").stop().animate({ opacity:0.3 }, 300);
+                $(".button-wrap").removeClass("addHeader");
+            }
+                //섹션1에서는 스크롤이벤트가 100px이상 발생하면, 헤더에 배경색 바뀌고 이미지 부드럽게 보인다.(fadeIn 효과)
+            if( $(this).scrollTop() > /* $("#section1").offset().top+ */100 ){  //섹션 1의 탑값 위치에 오면
+                $("#section1").stop().animate({ opacity:1 }, 300);
+                $(".button-wrap").addClass("addHeader");
+            }
+            if( $(this).scrollTop() > $("#section2").offset().top ){  //섹션 1의 탑값 위치에 오면
+                $("#section2").stop().animate({ opacity:1 }, 300);    
+            }
+            if( $(this).scrollTop() > $("#section3").offset().top ){  //섹션 1의 탑값 위치에 오면
+                $("#section3").stop().animate({ opacity:1 }, 300);
+            }
+            if( $(this).scrollTop() > $("#section4").offset().top ){  //섹션 1의 탑값 위치에 오면
+                $("#section4").stop().animate({ opacity:1 }, 300);
+            }
+            if( $(this).scrollTop() > $("#section5").offset().top ){  //섹션 1의 탑값 위치에 오면
+                $("#section5").stop().animate({ opacity:1 }, 300);
+            }
+            if( $(this).scrollTop() > $("#section6").offset().top ){  //섹션 1의 탑값 위치에 오면
+                $("#section6").stop().animate({ opacity:1 }, 300);
+            }
+                
         });
     })(jQuery, window, document);
     </script>

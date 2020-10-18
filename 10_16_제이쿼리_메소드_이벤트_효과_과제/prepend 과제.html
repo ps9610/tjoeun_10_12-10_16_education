@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>prepend | 삽입 관련 메서드</title>
+<meta name="Author-date" content="2020-10-16"> 
+
+<script src="./js/lib/jquery-1.12.4.min.js"></script>       
+
+<script>
+$(function(){ 
+  cnt=6;
+
+  //prepend(맨 앞에 추가됨) : 클릭시 맨 앞에 추가
+  $(".prepend-btn").on({
+    click:function(){
+      cnt--;
+
+      if(cnt<1){ 
+        cnt=5;
+      }
+      $("#gallery ul li").eq(4).remove();
+      $("#gallery ul").prepend("<li><div><img src='./img_1/photo_" + cnt + ".jpg'></div></li>");
+    }
+  });
+
+  //append(맨 뒤에 추가됨) : 클릭시 맨 뒤에 추가
+  $(".append-btn").on({
+    click:function(){
+      cnt++; 
+      if(cnt>5){
+        cnt=1; 
+      }
+      $("#gallery ul li").eq(0).remove(); //remove : 태그가 아예 없어짐
+      $("#gallery ul").append("<li><div><img src='./img_1/photo_" + cnt + ".jpg'></div></li>");
+    }
+  });
+
+//remove-btn : 태그 요소 삭제
+$(".remove-btn").on({
+  click:function(){
+    $(".txt2").remove();
+  }
+});
+
+//empty-btn : 태그 안의 내용만 삭제
+$(".empty-btn").on({
+  click:function(){
+    $(".txt1").empty(); 
+  }
+});
+
+//선택 요소의 이전(왼쪽이나 위에 위치함)
+$(".before-btn").on({
+  click:function(){
+    $("#textWrap").before("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-before.jpg' width='200'; alt=''></div>");
+  }
+});
+
+//선택 요소의 이후(오른쪽이나 밑에 위치함 )
+$(".after-btn").on({
+  click:function(){
+    $("#textWrap").after("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-after.jpg' width='200'; alt=''></div>");
+  }
+});
+
+
+  $("#btn1").click(function(){
+    $("p").prepend("<b>Prepended text : p태그 앞(이전)으로 위치하였습니다.</b> ");
+    $("p").append("<b>appended item : p태그 뒤(이후)로 위치하였습니다.</b>");
+  });
+
+  $("#btn2").click(function(){
+    $("ol").prepend("<li>Prepended item :ol태그 첫번째 태그로 위치하였습니다.</li>");
+    $("ol").append("<li>appended item : ol태그 마지막 태그로 위치하였습니다.</li>");
+  });
+});
+
+
+
+</script>
+
+    <style>
+
+      * {margin:0; padding:0;border:0;}
+      ul, li {list-style:none;}
+      img {vertical-align:middle;}
+
+        #gallery {width:1600px;margin:0 auto;}
+        #gallery ul {width:100%;}
+        #gallery ul:after {content:"";display:block;clear:both;}
+        #gallery ul li {float:left;width:20%;}
+        #gallery ul li div {width:100%;}
+        #gallery ul li div img {width:100%;}
+        #gallery .button-wrap {width:1600px;margin:50px auto;text-align:center;}
+        #gallery .button-wrap button {outline:0;cursor:pointer;display:inline-block;padding:0 40px;height:50px;background:#000;color:#fff;margin:0 10px;}
+        #gallery .button-wrap button:hover {background:#a33;color:#fff;}
+
+        #textWrap {width:500px;margin:50px auto;}
+
+    </style>
+</head>
+
+
+<body>
+    <div id="gallery">
+        <ul>
+            <li><div><img src="./img_1/photo_1.jpg"></div></li>
+            <li><div><img src="./img_1/photo_2.jpg"></div></li>
+            <li><div><img src="./img_1/photo_3.jpg"></div></li>
+            <li><div><img src="./img_1/photo_4.jpg"></div></li>
+            <li><div><img src="./img_1/photo_5.jpg"></div></li>
+        </ul>
+
+      <div class="button-wrap">
+        <button class="prepend-btn">Prepend</button>
+        <button class="append-btn">Append</button>
+        <button class="remove-btn">Remove</button>
+        <button class="empty-btn">Empty</button>
+        <button class="before-btn">Before</button>
+        <button class="after-btn">After</button>
+      </div>
+
+    </div>
+
+<div id="textWrap" style="display:inline-block;">
+ 
+  <p class="txt1"><i>내용과 자식요소까지 삭제하는</i> <u>메소드는</u> empty()입니다.</p>
+  <p class="txt2">태그 요소를 통째로 <i>삭제하는 메소드는 remove()입니다.</i></p>
+  
+  <ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+
+</div>
+
+</body>
+</html>

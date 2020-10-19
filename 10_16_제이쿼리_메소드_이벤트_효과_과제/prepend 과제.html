@@ -9,30 +9,28 @@
 <script src="./js/lib/jquery-1.12.4.min.js"></script>       
 
 <script>
-$(function(){ //홈페이지 로딩 후 실행하는 거라서 head든 body든 위치상관없음
+$(function(){ 
   cnt=6;
-// 애니메이션 없이 슬라이드 하는 방법
+
+  //prepend(맨 앞에 추가됨) : 클릭시 맨 앞에 추가
   $(".prepend-btn").on({
     click:function(){
-      cnt--; // 이전 슬라이드 preview, 좌측에서 우측으로 이동
+      cnt--;
+
       if(cnt<1){ 
         cnt=5;
       }
       $("#gallery ul li").eq(4).remove();
       $("#gallery ul").prepend("<li><div><img src='./img_1/photo_" + cnt + ".jpg'></div></li>");
-      //각 칸(li)마다 li를 추가하게 되면 li 안에 또 다른 li가 추가된다. = 오류
     }
   });
 
   //append(맨 뒤에 추가됨) : 클릭시 맨 뒤에 추가
-
-  //현재 cnt=5, 첫번째꺼가 삭제된 후에 
-  //맨 뒤에 첫번째꺼가 삽입됨
   $(".append-btn").on({
     click:function(){
-      cnt++; // 다음 슬라이드 next, 우측에서 좌측으로 이동 (그 전의 이미지가 처음으로 옮겨짐)
+      cnt++; 
       if(cnt>5){
-        cnt=1; // 1 2 3 4 5
+        cnt=1; 
       }
       $("#gallery ul li").eq(0).remove(); //remove : 태그가 아예 없어짐
       $("#gallery ul").append("<li><div><img src='./img_1/photo_" + cnt + ".jpg'></div></li>");
@@ -40,32 +38,30 @@ $(function(){ //홈페이지 로딩 후 실행하는 거라서 head든 body든 �
   });
 
 //remove-btn : 태그 요소 삭제
-//클릭하면(이벤트가 발생하면) 
 $(".remove-btn").on({
   click:function(){
-    $(".txt2").remove(); //아예 없어짐
+    $(".txt2").remove();
   }
 });
 
-//empty-btn : 태그 안 내용만 삭제
-//클릭하면(이벤트가 발생하면) 
+//empty-btn : 태그 안의 내용만 삭제
 $(".empty-btn").on({
   click:function(){
-    $(".txt1").empty(); //해당 태그 밑의 하위요소(element, text)까지 지워짐
+    $(".txt1").empty(); 
   }
 });
 
-//선택 요소의 이전(왼쪽이나 위에 위치함) 추가
+//선택 요소의 이전(왼쪽이나 위에 위치함)
 $(".before-btn").on({
   click:function(){
-    $("#textWrap").before("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-before.jpg' width='200'; alt=''></div>");//글씨 위에 위치함
+    $("#textWrap").before("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-before.jpg' width='200'; alt=''></div>");
   }
 });
 
-//선택 요소의 이후(오른쪽이나 밑에 위치함 ) 추가
+//선택 요소의 이후(오른쪽이나 밑에 위치함 )
 $(".after-btn").on({
   click:function(){
-    $("#textWrap").after("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-after.jpg' width='200'; alt=''></div>");//글씨 아래에 위치함
+    $("#textWrap").after("<div style='display:inline-block;width:200px;'><img src='./img_1/photo-after.jpg' width='200'; alt=''></div>");
   }
 });
 
@@ -73,13 +69,15 @@ $(".after-btn").on({
   $("#btn1").click(function(){
     $("p").prepend("<b>Prepended text : p태그 앞(이전)으로 위치하였습니다.</b> ");
     $("p").append("<b>appended item : p태그 뒤(이후)로 위치하였습니다.</b>");
-    // p라는 태그안에 첫번째 자식요소로 b태그를 줄것임.
   });
+
   $("#btn2").click(function(){
     $("ol").prepend("<li>Prepended item :ol태그 첫번째 태그로 위치하였습니다.</li>");
     $("ol").append("<li>appended item : ol태그 마지막 태그로 위치하였습니다.</li>");
   });
 });
+
+
 
 </script>
 

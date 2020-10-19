@@ -80,7 +80,7 @@
             }
         });
 
-        //스크롤 이벤트(BOM 기능
+        //스크롤 이벤트(BOM-Browser Object Modelling 기능)
         //👇 콜백함수 만드는 방법
         // $(window).scroll()
         // $(window).scroll(function(){})
@@ -89,17 +89,17 @@
         // });
         $("section").stop().animate({ opacity:0.3 }, 0); //초기값
         
-        $(window).scroll(function(){
+        $(window).scroll(function(){// 윈도우에서 스크롤이 1px이라도 발생하면 콜백함수를 실행하라
             console.log( $(this).scrollTop() );
             //스크롤 탑 값이 0=맨위상단, 초기화
-            if( $(this).scrollTop() == 0 ){  //섹션 1의 탑값 위치에 오면
+            if( $(this).scrollTop() == 0 ){  //콜백함수 안의 조건문 : 섹션 1의 탑값 위치에 오면
                 $("section").stop().animate({ opacity:0.3 }, 300);
                 $(".button-wrap").removeClass("addHeader");
             }
                 //섹션1에서는 스크롤이벤트가 100px이상 발생하면, 헤더에 배경색 바뀌고 이미지 부드럽게 보인다.(fadeIn 효과)
             if( $(this).scrollTop() > /* $("#section1").offset().top+ */100 ){  //섹션 1의 탑값 위치에 오면
                 $("#section1").stop().animate({ opacity:1 }, 300);
-                $(".button-wrap").addClass("addHeader");
+                $(".button-wrap").addClass("addHeader"); 
             }
             if( $(this).scrollTop() > $("#section2").offset().top ){  //섹션 1의 탑값 위치에 오면
                 $("#section2").stop().animate({ opacity:1 }, 300);    
